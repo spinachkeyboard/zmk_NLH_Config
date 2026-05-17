@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -lah \"E:\\\\Media\\\\Document\\\\KiCad\\\\8.0\\\\projects\\\\Hatsukey\\\\Hatsukey\\\\\" | grep -i \"\\\\.kicad\")",
+      "Read(//e/Media/Document/KiCad/8.0/projects/Hatsukey/**)",
+      "Bash(python3)",
+      "PowerShell(Get-ChildItem \"e:\\\\Git\\\\zmk_NLH\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Format-Table -AutoSize -HideTableHeaders)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "PowerShell(gh --version)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "PowerShell(git -C \"e:\\\\Git\\\\zmk_NLH\" config user.name)",
+      "PowerShell(git -C \"e:\\\\Git\\\\zmk_NLH\" config user.email)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "PowerShell(Copy-Item -Recurse \"e:\\\\Git\\\\zmk_NLH\\\\config\\\\boards\\\\shields\" -Destination \"e:\\\\Git\\\\zmk_NLH\\\\boards\\\\\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Force \"e:\\\\Git\\\\zmk_NLH\\\\boards\\\\shields\")",
+      "PowerShell(Move-Item \"e:\\\\Git\\\\zmk_NLH\\\\boards\\\\nlh_split\" \"e:\\\\Git\\\\zmk_NLH\\\\boards\\\\shields\\\\nlh_split\" -Force)",
+      "Bash(git rm *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
