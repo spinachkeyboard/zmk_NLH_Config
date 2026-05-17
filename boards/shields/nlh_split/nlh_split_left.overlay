@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
@@ -12,23 +13,14 @@
         columns = <15>;
         rows = <5>;
         map = <
-/* Row 0: 7L + 7R = 14 keys  (right missing R_COL6 = global col 13) */
 RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)  RC(0,6)
 RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11) RC(0,12) RC(0,14)
-
-/* Row 1: 7L + 8R = 15 keys */
 RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)  RC(1,6)
 RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11) RC(1,12) RC(1,13) RC(1,14)
-
-/* Row 2: 7L + 7R = 14 keys  (right missing R_COL6 = global col 13) */
 RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)  RC(2,6)
 RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11) RC(2,12) RC(2,14)
-
-/* Row 3: 6L + 8R = 14 keys  (left missing L_COL6 = global col 6) */
 RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)
 RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10) RC(3,11) RC(3,12) RC(3,13) RC(3,14)
-
-/* Row 4: 6L + 7R = 13 keys  (left missing L_COL6, right missing R_COL2 = global col 9) */
 RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)  RC(4,5)
 RC(4,7)  RC(4,8)  RC(4,10) RC(4,11) RC(4,12) RC(4,13) RC(4,14)
         >;
@@ -39,84 +31,78 @@ RC(4,7)  RC(4,8)  RC(4,10) RC(4,11) RC(4,12) RC(4,13) RC(4,14)
         display-name = "Default";
         transform = <&default_transform>;
         kscan = <&kscan0>;
-        keys = <
-            /* x    y    w    h    rx   ry   r */
-            /* Row 0: 14 keys */
-               0    0    100  100  0    0    0
-               100  0    100  100  0    0    0
-               200  0    100  100  0    0    0
-               300  0    100  100  0    0    0
-               400  0    100  100  0    0    0
-               500  0    100  100  0    0    0
-               600  0    100  100  0    0    0
-               750  0    100  100  0    0    0
-               850  0    100  100  0    0    0
-               950  0    100  100  0    0    0
-               1050 0    100  100  0    0    0
-               1150 0    100  100  0    0    0
-               1250 0    100  100  0    0    0
-               1450 0    100  100  0    0    0
-            /* Row 1: 15 keys */
-               0    100  100  100  0    0    0
-               100  100  100  100  0    0    0
-               200  100  100  100  0    0    0
-               300  100  100  100  0    0    0
-               400  100  100  100  0    0    0
-               500  100  100  100  0    0    0
-               600  100  100  100  0    0    0
-               750  100  100  100  0    0    0
-               850  100  100  100  0    0    0
-               950  100  100  100  0    0    0
-               1050 100  100  100  0    0    0
-               1150 100  100  100  0    0    0
-               1250 100  100  100  0    0    0
-               1350 100  100  100  0    0    0
-               1450 100  100  100  0    0    0
-            /* Row 2: 14 keys */
-               0    200  100  100  0    0    0
-               100  200  100  100  0    0    0
-               200  200  100  100  0    0    0
-               300  200  100  100  0    0    0
-               400  200  100  100  0    0    0
-               500  200  100  100  0    0    0
-               600  200  100  100  0    0    0
-               750  200  100  100  0    0    0
-               850  200  100  100  0    0    0
-               950  200  100  100  0    0    0
-               1050 200  100  100  0    0    0
-               1150 200  100  100  0    0    0
-               1250 200  100  100  0    0    0
-               1450 200  100  100  0    0    0
-            /* Row 3: 14 keys */
-               0    300  100  100  0    0    0
-               100  300  100  100  0    0    0
-               200  300  100  100  0    0    0
-               300  300  100  100  0    0    0
-               400  300  100  100  0    0    0
-               500  300  100  100  0    0    0
-               750  300  100  100  0    0    0
-               850  300  100  100  0    0    0
-               950  300  100  100  0    0    0
-               1050 300  100  100  0    0    0
-               1150 300  100  100  0    0    0
-               1250 300  100  100  0    0    0
-               1350 300  100  100  0    0    0
-               1450 300  100  100  0    0    0
-            /* Row 4: 13 keys */
-               0    400  100  100  0    0    0
-               100  400  100  100  0    0    0
-               200  400  100  100  0    0    0
-               300  400  100  100  0    0    0
-               400  400  100  100  0    0    0
-               500  400  100  100  0    0    0
-               750  400  100  100  0    0    0
-               850  400  100  100  0    0    0
-               1050 400  100  100  0    0    0
-               1150 400  100  100  0    0    0
-               1250 400  100  100  0    0    0
-               1350 400  100  100  0    0    0
-               1450 400  100  100  0    0    0
-        >;
+        keys /* w    h    x     y    r   rx   ry */
+            = <&key_physical_attrs 100 100    0    0   0   0   0>
+            , <&key_physical_attrs 100 100  100    0   0   0   0>
+            , <&key_physical_attrs 100 100  200    0   0   0   0>
+            , <&key_physical_attrs 100 100  300    0   0   0   0>
+            , <&key_physical_attrs 100 100  400    0   0   0   0>
+            , <&key_physical_attrs 100 100  500    0   0   0   0>
+            , <&key_physical_attrs 100 100  600    0   0   0   0>
+            , <&key_physical_attrs 100 100  750    0   0   0   0>
+            , <&key_physical_attrs 100 100  850    0   0   0   0>
+            , <&key_physical_attrs 100 100  950    0   0   0   0>
+            , <&key_physical_attrs 100 100 1050    0   0   0   0>
+            , <&key_physical_attrs 100 100 1150    0   0   0   0>
+            , <&key_physical_attrs 100 100 1250    0   0   0   0>
+            , <&key_physical_attrs 100 100 1450    0   0   0   0>
+            , <&key_physical_attrs 100 100    0  100   0   0   0>
+            , <&key_physical_attrs 100 100  100  100   0   0   0>
+            , <&key_physical_attrs 100 100  200  100   0   0   0>
+            , <&key_physical_attrs 100 100  300  100   0   0   0>
+            , <&key_physical_attrs 100 100  400  100   0   0   0>
+            , <&key_physical_attrs 100 100  500  100   0   0   0>
+            , <&key_physical_attrs 100 100  600  100   0   0   0>
+            , <&key_physical_attrs 100 100  750  100   0   0   0>
+            , <&key_physical_attrs 100 100  850  100   0   0   0>
+            , <&key_physical_attrs 100 100  950  100   0   0   0>
+            , <&key_physical_attrs 100 100 1050  100   0   0   0>
+            , <&key_physical_attrs 100 100 1150  100   0   0   0>
+            , <&key_physical_attrs 100 100 1250  100   0   0   0>
+            , <&key_physical_attrs 100 100 1350  100   0   0   0>
+            , <&key_physical_attrs 100 100 1450  100   0   0   0>
+            , <&key_physical_attrs 100 100    0  200   0   0   0>
+            , <&key_physical_attrs 100 100  100  200   0   0   0>
+            , <&key_physical_attrs 100 100  200  200   0   0   0>
+            , <&key_physical_attrs 100 100  300  200   0   0   0>
+            , <&key_physical_attrs 100 100  400  200   0   0   0>
+            , <&key_physical_attrs 100 100  500  200   0   0   0>
+            , <&key_physical_attrs 100 100  600  200   0   0   0>
+            , <&key_physical_attrs 100 100  750  200   0   0   0>
+            , <&key_physical_attrs 100 100  850  200   0   0   0>
+            , <&key_physical_attrs 100 100  950  200   0   0   0>
+            , <&key_physical_attrs 100 100 1050  200   0   0   0>
+            , <&key_physical_attrs 100 100 1150  200   0   0   0>
+            , <&key_physical_attrs 100 100 1250  200   0   0   0>
+            , <&key_physical_attrs 100 100 1450  200   0   0   0>
+            , <&key_physical_attrs 100 100    0  300   0   0   0>
+            , <&key_physical_attrs 100 100  100  300   0   0   0>
+            , <&key_physical_attrs 100 100  200  300   0   0   0>
+            , <&key_physical_attrs 100 100  300  300   0   0   0>
+            , <&key_physical_attrs 100 100  400  300   0   0   0>
+            , <&key_physical_attrs 100 100  500  300   0   0   0>
+            , <&key_physical_attrs 100 100  750  300   0   0   0>
+            , <&key_physical_attrs 100 100  850  300   0   0   0>
+            , <&key_physical_attrs 100 100  950  300   0   0   0>
+            , <&key_physical_attrs 100 100 1050  300   0   0   0>
+            , <&key_physical_attrs 100 100 1150  300   0   0   0>
+            , <&key_physical_attrs 100 100 1250  300   0   0   0>
+            , <&key_physical_attrs 100 100 1350  300   0   0   0>
+            , <&key_physical_attrs 100 100 1450  300   0   0   0>
+            , <&key_physical_attrs 100 100    0  400   0   0   0>
+            , <&key_physical_attrs 100 100  100  400   0   0   0>
+            , <&key_physical_attrs 100 100  200  400   0   0   0>
+            , <&key_physical_attrs 100 100  300  400   0   0   0>
+            , <&key_physical_attrs 100 100  400  400   0   0   0>
+            , <&key_physical_attrs 100 100  500  400   0   0   0>
+            , <&key_physical_attrs 100 100  750  400   0   0   0>
+            , <&key_physical_attrs 100 100  850  400   0   0   0>
+            , <&key_physical_attrs 100 100 1050  400   0   0   0>
+            , <&key_physical_attrs 100 100 1150  400   0   0   0>
+            , <&key_physical_attrs 100 100 1250  400   0   0   0>
+            , <&key_physical_attrs 100 100 1350  400   0   0   0>
+            , <&key_physical_attrs 100 100 1450  400   0   0   0>
+            ;
     };
 
     kscan0: kscan {
@@ -124,21 +110,21 @@ RC(4,7)  RC(4,8)  RC(4,10) RC(4,11) RC(4,12) RC(4,13) RC(4,14)
         diode-direction = "col2row";
 
         col-gpios
-            = <&gpio1 4  GPIO_ACTIVE_HIGH>  /* L_COL0 = P1.04 */
-            , <&gpio0 11 GPIO_ACTIVE_HIGH>  /* L_COL1 = P0.11 */
-            , <&gpio1 0  GPIO_ACTIVE_HIGH>  /* L_COL2 = P1.00 */
-            , <&gpio0 24 GPIO_ACTIVE_HIGH>  /* L_COL3 = P0.24 */
-            , <&gpio0 22 GPIO_ACTIVE_HIGH>  /* L_COL4 = P0.22 */
-            , <&gpio0 20 GPIO_ACTIVE_HIGH>  /* L_COL5 = P0.20 */
-            , <&gpio0 17 GPIO_ACTIVE_HIGH>  /* L_COL6 = P0.17 */
+            = <&gpio1 4  GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* L_ROW0 = P0.31 */
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* L_ROW1 = P0.29 */
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* L_ROW2 = P0.02 */
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* L_ROW3 = P1.15 */
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* L_ROW4 = P1.13 */
+            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
