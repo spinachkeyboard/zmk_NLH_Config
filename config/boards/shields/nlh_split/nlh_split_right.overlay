@@ -1,0 +1,51 @@
+/*
+ * NLH Split - Right Half
+ *
+ * Matrix: 5 rows x 8 cols = 37 keys
+ *
+ * Right MCU (U2) pin mapping (verified from KiCad schematic):
+ *   COL0 = P0.31  COL1 = P0.29  COL2 = P0.02
+ *   COL3 = P1.15  COL4 = P1.13  COL5 = P1.11
+ *   COL6 = P0.10  COL7 = P0.09
+ *   ROW0 = P1.00  ROW1 = P0.24  ROW2 = P0.22
+ *   ROW3 = P0.20  ROW4 = P0.17
+ *
+ * Populated positions per row (local col indices):
+ *   ROW0: C0 C1 C2 C3 C4 C5    C7  (missing C6)
+ *   ROW1: C0 C1 C2 C3 C4 C5 C6 C7  (all 8)
+ *   ROW2: C0 C1 C2 C3 C4 C5    C7  (missing C6)
+ *   ROW3: C0 C1 C2 C3 C4 C5 C6 C7  (all 8)
+ *   ROW4: C0 C1    C3 C4 C5 C6 C7  (missing C2)
+ *
+ * Global col offset = 7 (right cols 0-7 map to global cols 7-14)
+ */
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio0 31 GPIO_ACTIVE_HIGH>  /* R_COL0 = P0.31 */
+            , <&gpio0 29 GPIO_ACTIVE_HIGH>  /* R_COL1 = P0.29 */
+            , <&gpio0 2  GPIO_ACTIVE_HIGH>  /* R_COL2 = P0.02 */
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>  /* R_COL3 = P1.15 */
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>  /* R_COL4 = P1.13 */
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>  /* R_COL5 = P1.11 */
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>  /* R_COL6 = P0.10 */
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>  /* R_COL7 = P0.09 */
+            ;
+
+        row-gpios
+            = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW0 = P1.00 */
+            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW1 = P0.24 */
+            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW2 = P0.22 */
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW3 = P0.20 */
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW4 = P0.17 */
+            ;
+    };
+};

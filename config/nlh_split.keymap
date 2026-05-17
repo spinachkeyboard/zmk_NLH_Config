@@ -1,0 +1,95 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/*
+ * NLH Split Keymap — 70 keys total
+ *
+ * Physical layout (row x col, left then right per row):
+ *
+ * ROW0 (14): ` 1 2 3 4 5 6 | 7 8 9 0 - = DEL
+ * ROW1 (15): TAB Q W E R T BSPC | Y U I O P [ ] \
+ * ROW2 (14): ESC A S D F G DEL  | H J K L ; ' RET
+ * ROW3 (14): LSFT Z X C V B | N M , . / RSFT UP DEL
+ * ROW4 (13): LCTL LGUI LALT SPC MO1 MO2 | RALT LEFT DOWN RIGHT END PGDN PGUP
+ *
+ * Adjust ROW0-4 keycodes below to match actual physical key positions.
+ */
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+/* ROW0 (14): left 7 | right 7 */
+&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6
+&kp N7     &kp N8   &kp N9   &kp N0   &kp MINUS &kp EQUAL &kp DEL
+
+/* ROW1 (15): left 7 | right 8 */
+&kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp BSPC
+&kp Y      &kp U    &kp I    &kp O    &kp P    &kp LBKT &kp RBKT &kp BSLH
+
+/* ROW2 (14): left 7 | right 7 */
+&kp ESC    &kp A    &kp S    &kp D    &kp F    &kp G    &kp DEL
+&kp H      &kp J    &kp K    &kp L    &kp SEMI &kp SQT  &kp RET
+
+/* ROW3 (14): left 6 | right 8 */
+&kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B
+&kp N      &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT &kp UP   &kp DEL
+
+/* ROW4 (13): left 6 | right 7 */
+&kp LCTRL  &kp LGUI &kp LALT &kp SPACE &mo 1  &mo 2
+&kp RALT   &kp LEFT &kp DOWN &kp RIGHT &kp END &kp PG_DN &kp PG_UP
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+/* ROW0 (14) */
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F6
+&kp F7  &kp F8   &kp F9   &kp F10  &kp F11  &kp F12  &trans
+
+/* ROW1 (15) */
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans
+
+/* ROW2 (14) */
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+
+/* ROW3 (14) */
+&trans  &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &kp HOME &trans
+
+/* ROW4 (13) */
+&trans  &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans  &trans
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+/* ROW0 (14) — BT profile select */
+&trans        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
+&trans        &trans       &trans       &trans       &trans       &trans       &bt BT_CLR
+
+/* ROW1 (15) */
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans
+
+/* ROW2 (14) */
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans
+
+/* ROW3 (14) */
+&trans  &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans
+
+/* ROW4 (13) */
+&trans  &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans  &trans
+            >;
+        };
+    };
+};
