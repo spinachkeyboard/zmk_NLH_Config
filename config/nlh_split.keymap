@@ -39,7 +39,7 @@
 &kp N      &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT &kp UP   &kp DEL
 
 /* ROW4 (13): left 6 | right 7 */
-&kp LCTRL  &kp LGUI &kp LALT &kp SPACE &mo 1  &mo 2
+&kp LCTRL  &kp LGUI &kp LALT &kp SPACE &kp SPACE &kp RET
 &kp RALT   &kp LEFT &kp DOWN &kp RIGHT &kp END &kp PG_DN &kp PG_UP
             >;
         };
