@@ -8,10 +8,10 @@ draw_config:
 parse_config:
   raw_binding_map:
     "&to 0":           {t: "△"}
-    "&mmv MOVE_UP":    {t: "$material:arrow_upward$",   h: "$material:mouse$"}
-    "&mmv MOVE_DOWN":  {t: "$material:arrow_downward$", h: "$material:mouse$"}
-    "&mmv MOVE_RIGHT": {t: "$material:arrow_forward$",  h: "$material:mouse$"}
-    "&mmv MOVE_LEFT":  {t: "$material:arrow_back$",     h: "$material:mouse$"}
-    "&mkp LCLK":       {t: "$material:left_click$"}
-    "&mkp RCLK":       {t: "$material:right_click$"}
-    "&mkp MCLK":       {t: "$material:drag_pan$"}
+    "&mmv MOVE_UP":    {t: "$$material:arrow_upward$$",   h: "$$material:mouse$$"}
+    "&mmv MOVE_DOWN":  {t: "$$material:arrow_downward$$", h: "$$material:mouse$$"}
+    "&mmv MOVE_RIGHT": {t: "$$material:arrow_forward$$",  h: "$$material:mouse$$"}
+    "&mmv MOVE_LEFT":  {t: "$$material:arrow_back$$",     h: "$$material:mouse$$"}
+    "&mkp LCLK":       {t: "$$material:left_click$$"}
+    "&mkp RCLK":       {t: "$$material:right_click$$"}
+    "&mkp MCLK":       {t: "$$material:drag_pan$$"}

@@ -1,4 +1,30 @@
 <svg width="1040" height="1726" viewBox="0 0 1040 1726" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>/* start glyphs */
+<svg id="material:arrow_back">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m274-450 248 248-42 42-320-320 320-320 42 42-248 248h526v60H274Z"/></svg>
+</svg>
+<svg id="material:arrow_downward">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M450-800v526L202-522l-42 42 320 320 320-320-42-42-248 248v-526h-60Z"/></svg>
+</svg>
+<svg id="material:arrow_forward">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg>
+</svg>
+<svg id="material:arrow_upward">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"/></svg>
+</svg>
+<svg id="material:drag_pan">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-80 317-243l44-44 89 89v-252H198l84 84-44 44L80-480l159-159 44 44-85 85h252v-252l-84 84-44-44 158-158 158 158-44 44-84-84v252h252l-84-84 44-44 158 158-158 158-44-44 84-84H510v252l89-89 44 44L480-80Z"/></svg>
+</svg>
+<svg id="material:left_click">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M468-240q-96-5-162-74t-66-166q0-100 70-170t170-70q97 0 166 66t74 163l-63-20q-11-64-60-106.5T480-660q-75 0-127.5 52.5T300-480q0 67 42.5 116.5T449-303l19 63ZM821-60 650-231 600-80 480-480l400 120-151 50 171 171-79 79Z"/></svg>
+</svg>
+<svg id="material:mouse">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-80q-118 0-199-81t-81-199v-260q0-118 81-199t199-81q118 0 199 81t81 199v260q0 118-81 199T480-80Zm30-540h190q0-81-53-144t-137-74v218Zm-250 0h190v-218q-84 11-137 74t-53 144Zm219.79 480q91.21 0 155.71-64.35Q700-268.7 700-360v-200H260v200q0 91.3 64.29 155.65Q388.58-140 479.79-140Zm.21-420Zm30-60Zm-60 0Zm30 60Z"/></svg>
+</svg>
+<svg id="material:right_click">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m492-240 19-63q64-11 106.5-60.5T660-480q0-75-52.5-127.5T480-660q-68 0-117 42.5T303-511l-63 20q5-97 74-163t166-66q100 0 170 70t70 170q0 97-66 166t-162 74ZM139-60l-79-79 171-171-151-50 400-120L360-80l-50-151L139-60Z"/></svg>
+</svg>
+</defs>/* end glyphs */
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -1021,9 +1047,7 @@ path.combo {
 </g>
 <g transform="translate(140, 28)" class="key keypos-2">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 78%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">drag_pan$</tspan>
-</text>
+<use href="#material:drag_pan" xlink:href="#material:drag_pan" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:drag_pan"/>
 </g>
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -1047,9 +1071,7 @@ path.combo {
 </g>
 <g transform="translate(644, 28)" class="key keypos-8">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 78%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">drag_pan$</tspan>
-</text>
+<use href="#material:drag_pan" xlink:href="#material:drag_pan" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:drag_pan"/>
 </g>
 <g transform="translate(700, 28)" class="key keypos-9">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -1077,22 +1099,16 @@ path.combo {
 </g>
 <g transform="translate(112, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">left_click$</tspan>
-</text>
+<use href="#material:left_click" xlink:href="#material:left_click" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:left_click"/>
 </g>
 <g transform="translate(168, 84)" class="key keypos-16">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_upwa…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_upward" xlink:href="#material:arrow_upward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_upward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(224, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">right_clic…</tspan>
-</text>
+<use href="#material:right_click" xlink:href="#material:right_click" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:right_click"/>
 </g>
 <g transform="translate(280, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -1108,22 +1124,16 @@ path.combo {
 </g>
 <g transform="translate(560, 84)" class="key keypos-21">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">left_click$</tspan>
-</text>
+<use href="#material:left_click" xlink:href="#material:left_click" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:left_click"/>
 </g>
 <g transform="translate(616, 84)" class="key keypos-22">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_upwa…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_upward" xlink:href="#material:arrow_upward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_upward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(672, 84)" class="key keypos-23">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">right_clic…</tspan>
-</text>
+<use href="#material:right_click" xlink:href="#material:right_click" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:right_click"/>
 </g>
 <g transform="translate(728, 84)" class="key keypos-24">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -1151,24 +1161,18 @@ path.combo {
 </g>
 <g transform="translate(126, 140)" class="key keypos-30">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_back$</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_back" xlink:href="#material:arrow_back" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_back"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(182, 140)" class="key keypos-31">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_down…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_downward" xlink:href="#material:arrow_downward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_downward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(238, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_forw…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_forward" xlink:href="#material:arrow_forward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_forward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(294, 140)" class="key keypos-33">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -1184,24 +1188,18 @@ path.combo {
 </g>
 <g transform="translate(574, 140)" class="key keypos-36">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_back$</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_back" xlink:href="#material:arrow_back" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_back"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(630, 140)" class="key keypos-37">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_down…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_downward" xlink:href="#material:arrow_downward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_downward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(686, 140)" class="key keypos-38">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 64%">$material</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">:</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">arrow_forw…</tspan>
-</text>
-<text x="0" y="20" class="key hold"><tspan style="font-size: 64%">$material:…</tspan></text>
+<use href="#material:arrow_forward" xlink:href="#material:arrow_forward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:arrow_forward"/>
+<use href="#material:mouse" xlink:href="#material:mouse" x="-6" y="8" height="12" width="12.0" class="key hold glyph material:mouse"/>
 </g>
 <g transform="translate(742, 140)" class="key keypos-39">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>

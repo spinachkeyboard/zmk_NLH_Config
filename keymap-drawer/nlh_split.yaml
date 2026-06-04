@@ -216,43 +216,43 @@ layers:
   Mouse:
   - △
   - △
-  - $material:drag_pan$
+  - $$material:drag_pan$$
   - △
   - △
   - △
   - △
   - △
-  - $material:drag_pan$
-  - △
-  - △
-  - △
-  - △
-  - △
-  - △
-  - $material:left_click$
-  - {t: '$material:arrow_upward$', h: '$material:mouse$'}
-  - $material:right_click$
-  - △
-  - △
-  - △
-  - $material:left_click$
-  - {t: '$material:arrow_upward$', h: '$material:mouse$'}
-  - $material:right_click$
+  - $$material:drag_pan$$
   - △
   - △
   - △
   - △
   - △
   - △
-  - {t: '$material:arrow_back$', h: '$material:mouse$'}
-  - {t: '$material:arrow_downward$', h: '$material:mouse$'}
-  - {t: '$material:arrow_forward$', h: '$material:mouse$'}
+  - $$material:left_click$$
+  - {t: '$$material:arrow_upward$$', h: '$$material:mouse$$'}
+  - $$material:right_click$$
   - △
   - △
   - △
-  - {t: '$material:arrow_back$', h: '$material:mouse$'}
-  - {t: '$material:arrow_downward$', h: '$material:mouse$'}
-  - {t: '$material:arrow_forward$', h: '$material:mouse$'}
+  - $$material:left_click$$
+  - {t: '$$material:arrow_upward$$', h: '$$material:mouse$$'}
+  - $$material:right_click$$
+  - △
+  - △
+  - △
+  - △
+  - △
+  - △
+  - {t: '$$material:arrow_back$$', h: '$$material:mouse$$'}
+  - {t: '$$material:arrow_downward$$', h: '$$material:mouse$$'}
+  - {t: '$$material:arrow_forward$$', h: '$$material:mouse$$'}
+  - △
+  - △
+  - △
+  - {t: '$$material:arrow_back$$', h: '$$material:mouse$$'}
+  - {t: '$$material:arrow_downward$$', h: '$$material:mouse$$'}
+  - {t: '$$material:arrow_forward$$', h: '$$material:mouse$$'}
   - △
   - △
   - △
