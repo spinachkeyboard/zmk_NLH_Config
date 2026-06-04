@@ -1,4 +1,4 @@
-#include "nlh_split.dtsi"
+#include "nlh_split-layouts.dtsi"
 
 / {
     chosen {
