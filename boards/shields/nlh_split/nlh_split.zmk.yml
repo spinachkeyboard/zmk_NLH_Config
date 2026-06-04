@@ -1,0 +1,8 @@
+file_format: "1"
+id: nlh_split
+name: NLH Split
+type: shield
+url: https://github.com/user/zmk-config
+siblings:
+  - nlh_split_left
+  - nlh_split_right

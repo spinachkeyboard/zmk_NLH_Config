@@ -1,0 +1,121 @@
+#include <physical_layouts.dtsi>
+#include "nlh_split.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+        keys /* w    h    x     y    r      rx   ry */
+            /* Row 0 Left: GRAVE N1 N2 N3 N4 N5 N6 */
+            = <&key_physical_attrs 100 100    0    0   0     0    0>
+            , <&key_physical_attrs 100 100  100    0   0     0    0>
+            , <&key_physical_attrs 100 100  200    0   0     0    0>
+            , <&key_physical_attrs 100 100  300    0   0     0    0>
+            , <&key_physical_attrs 100 100  400    0   0     0    0>
+            , <&key_physical_attrs 100 100  500    0   0     0    0>
+            , <&key_physical_attrs 100 100  600    0   0     0    0>
+            /* Row 0 Right: N7 N8 N9 N0 - = BSPC(1.5u) */
+            , <&key_physical_attrs 100 100 1000    0   0     0    0>
+            , <&key_physical_attrs 100 100 1100    0   0     0    0>
+            , <&key_physical_attrs 100 100 1200    0   0     0    0>
+            , <&key_physical_attrs 100 100 1300    0   0     0    0>
+            , <&key_physical_attrs 100 100 1400    0   0     0    0>
+            , <&key_physical_attrs 100 100 1500    0   0     0    0>
+            , <&key_physical_attrs 150 100 1600    0   0     0    0>
+            /* Row 1 Left: TAB(1.5u) Q W E R T Y */
+            , <&key_physical_attrs 150 100    0  100   0     0    0>
+            , <&key_physical_attrs 100 100  150  100   0     0    0>
+            , <&key_physical_attrs 100 100  250  100   0     0    0>
+            , <&key_physical_attrs 100 100  350  100   0     0    0>
+            , <&key_physical_attrs 100 100  450  100   0     0    0>
+            , <&key_physical_attrs 100 100  550  100   0     0    0>
+            , <&key_physical_attrs 100 100  650  100   0     0    0>
+            /* Row 1 Right: Y U I O P [ ] BSLH */
+            , <&key_physical_attrs 100 100  950  100   0     0    0>
+            , <&key_physical_attrs 100 100 1050  100   0     0    0>
+            , <&key_physical_attrs 100 100 1150  100   0     0    0>
+            , <&key_physical_attrs 100 100 1250  100   0     0    0>
+            , <&key_physical_attrs 100 100 1350  100   0     0    0>
+            , <&key_physical_attrs 100 100 1450  100   0     0    0>
+            , <&key_physical_attrs 100 100 1550  100   0     0    0>
+            , <&key_physical_attrs 100 100 1650  100   0     0    0>
+            /* Row 2 Left: Caps A S D F G H */
+            , <&key_physical_attrs 175 100    0  200   0     0    0>
+            , <&key_physical_attrs 100 100  175  200   0     0    0>
+            , <&key_physical_attrs 100 100  275  200   0     0    0>
+            , <&key_physical_attrs 100 100  375  200   0     0    0>
+            , <&key_physical_attrs 100 100  475  200   0     0    0>
+            , <&key_physical_attrs 100 100  575  200   0     0    0>
+            , <&key_physical_attrs 100 100  675  200   0     0    0>
+            /* Row 2 Right: H J K L ; ' RET(1.75u) */
+            , <&key_physical_attrs 100 100  975  200   0     0    0>
+            , <&key_physical_attrs 100 100 1075  200   0     0    0>
+            , <&key_physical_attrs 100 100 1175  200   0     0    0>
+            , <&key_physical_attrs 100 100 1275  200   0     0    0>
+            , <&key_physical_attrs 100 100 1375  200   0     0    0>
+            , <&key_physical_attrs 100 100 1475  200   0     0    0>
+            , <&key_physical_attrs 175 100 1575  200   0     0    0>
+            /* Row 3 Left: LSHFT(2.25u) Z X C V B */
+            , <&key_physical_attrs 225 100    0  300   0     0    0>
+            , <&key_physical_attrs 100 100  225  300   0     0    0>
+            , <&key_physical_attrs 100 100  325  300   0     0    0>
+            , <&key_physical_attrs 100 100  425  300   0     0    0>
+            , <&key_physical_attrs 100 100  525  300   0     0    0>
+            , <&key_physical_attrs 100 100  625  300   0     0    0>
+            /* Row 3 Right: B N M , . / UP RSHFT(1.25u) */
+            , <&key_physical_attrs 100 100  925  300   0     0    0>
+            , <&key_physical_attrs 100 100 1025  300   0     0    0>
+            , <&key_physical_attrs 100 100 1125  300   0     0    0>
+            , <&key_physical_attrs 100 100 1225  300   0     0    0>
+            , <&key_physical_attrs 100 100 1325  300   0     0    0>
+            , <&key_physical_attrs 100 100 1425  300   0     0    0>
+            , <&key_physical_attrs 100 100 1525  300   0     0    0>
+            , <&key_physical_attrs 125 100 1625  300   0     0    0>
+            /* Row 4 Left thumb: MO1(1.25u) LCTRL LALT LGUI(1.25u) + ESC SPC rotated */
+            , <&key_physical_attrs 125 100  0    400   0     0    0>
+            , <&key_physical_attrs 100 100  125  400   0     0    0>
+            , <&key_physical_attrs 100 100  225  400   0     0    0>
+            , <&key_physical_attrs 125 100  325  400   0     0    0>
+            , <&key_physical_attrs 100 100  550  450    1500   625   500>
+            , <&key_physical_attrs 150 100  675  500 (-4500)   725   575>
+            /* Row 4 Right thumb: RET(1.5u,+45°) BSP(-15°) RGUI(1.5u) RALT LEFT DOWN RIGHT */
+            , <&key_physical_attrs 150 100  900  500    4500   975   575>
+            , <&key_physical_attrs 100 100 1050  450 (-1500)  1100   500>
+            , <&key_physical_attrs 150 100 1175  400   0     0    0>
+            , <&key_physical_attrs 100 100 1325  400   0     0    0>
+            , <&key_physical_attrs 100 100 1425  400   0     0    0>
+            , <&key_physical_attrs 100 100 1525  400   0     0    0>
+            , <&key_physical_attrs 100 100 1625  400   0     0    0>
+            ;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio1 4  GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+};

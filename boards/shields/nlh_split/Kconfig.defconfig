@@ -1,0 +1,16 @@
+if SHIELD_NLH_SPLIT_LEFT || SHIELD_NLH_SPLIT_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "NLH Split"
+
+config ZMK_SPLIT
+    default y
+
+if SHIELD_NLH_SPLIT_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_NLH_SPLIT_LEFT
+
+endif # SHIELD_NLH_SPLIT_LEFT || SHIELD_NLH_SPLIT_RIGHT

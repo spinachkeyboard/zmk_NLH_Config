@@ -1,0 +1,5 @@
+config SHIELD_NLH_SPLIT_LEFT
+    def_bool $(shields_list_contains,nlh_split_left)
+
+config SHIELD_NLH_SPLIT_RIGHT
+    def_bool $(shields_list_contains,nlh_split_right)
