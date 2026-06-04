@@ -22,4 +22,4 @@ jobs:
       output_folder: keymap-drawer
       config_path: keymap_drawer.config.yaml
       west_config_path: 'config'
-      amend_commit: true
+      amend_commit: false
