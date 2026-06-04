@@ -14,7 +14,7 @@ layers:
   - '0'
   - '-'
   - '='
-  - BSPC
+  - $$material:backspace$$
   - TAB
   - Q
   - W
@@ -30,7 +30,7 @@ layers:
   - '['
   - ']'
   - \
-  - CLCK
+  - $$material:keyboard_capslock$$
   - A
   - S
   - D
@@ -43,7 +43,7 @@ layers:
   - L
   - ;
   - ''''
-  - RET
+  - $$material:keyboard_return$$
   - LSHFT
   - Z
   - X
@@ -56,7 +56,7 @@ layers:
   - ','
   - .
   - {t: '?', s: '!'}
-  - UP
+  - $$material:keyboard_arrow_up$$
   - RSHFT
   - {t: Fn, h: sticky}
   - LCTRL
@@ -64,13 +64,13 @@ layers:
   - LGUI
   - ESC
   - SPACE
-  - RET
-  - BSPC
+  - $$material:keyboard_return$$
+  - $$material:backspace$$
   - RGUI
   - /
-  - LEFT
-  - DOWN
-  - RIGHT
+  - $$material:keyboard_arrow_left$$
+  - $$material:keyboard_arrow_down$$
+  - $$material:keyboard_arrow_right$$
   Fn:
   - ESC
   - F1
