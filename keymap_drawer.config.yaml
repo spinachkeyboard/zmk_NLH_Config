@@ -15,3 +15,11 @@ parse_config:
     "&mkp LCLK":       {t: "$$material:left_click$$"}
     "&mkp RCLK":       {t: "$$material:right_click$$"}
     "&mkp MCLK":       {t: "$$material:drag_pan$$"}
+    "&kp BSPC":        {t: "$$material:backspace$$"}
+    "&kp RET":         {t: "$$material:keyboard_return$$"}
+    "&kp CLCK":        {t: "$$material:keyboard_capslock$$"}
+    "&kp UP":          {t: "$$material:keyboard_arrow_up$$"}
+    "&kp DOWN":        {t: "$$material:keyboard_arrow_down$$"}
+    "&kp LEFT":        {t: "$$material:keyboard_arrow_left$$"}
+    "&kp RIGHT":       {t: "$$material:keyboard_arrow_right$$"}
+    

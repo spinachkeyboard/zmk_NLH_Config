@@ -12,8 +12,29 @@
 <svg id="material:arrow_upward">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"/></svg>
 </svg>
+<svg id="material:backspace">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m448-326 112-112 112 112 43-43-113-111 111-111-43-43-110 112-112-112-43 43 113 111-113 111 43 43Zm-98 166q-14.25 0-27-6.38-12.75-6.37-21-17.62L80-480l221-296q8.25-11.25 21-17.63 12.75-6.37 27-6.37h472q24.75 0 42.38 17.62Q881-764.75 881-740v520q0 24.75-17.62 42.37Q845.75-160 821-160H350ZM155-480l195 260h471v-520H350L155-480Zm431 0Z"/></svg>
+</svg>
 <svg id="material:drag_pan">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-80 317-243l44-44 89 89v-252H198l84 84-44 44L80-480l159-159 44 44-85 85h252v-252l-84 84-44-44 158-158 158 158-44 44-84-84v252h252l-84-84 44-44 158 158-158 158-44-44 84-84H510v252l89-89 44 44L480-80Z"/></svg>
+</svg>
+<svg id="material:keyboard_arrow_down">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-344 240-584l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+</svg>
+<svg id="material:keyboard_arrow_left">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M561-240 320-481l241-241 43 43-198 198 198 198-43 43Z"/></svg>
+</svg>
+<svg id="material:keyboard_arrow_right">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M530-481 332-679l43-43 241 241-241 241-43-43 198-198Z"/></svg>
+</svg>
+<svg id="material:keyboard_arrow_up">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-554 283-357l-43-43 240-240 240 240-43 43-197-197Z"/></svg>
+</svg>
+<svg id="material:keyboard_capslock">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M240-240v-60h480v60H240Zm240-496 235 235-43 43-192-192-188 188-43-43 231-231Z"/></svg>
+</svg>
+<svg id="material:keyboard_return">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M359-240 120-479l239-239 43 43-167 167h545v-172h60v231H236l166 166-43 43Z"/></svg>
 </svg>
 <svg id="material:left_click">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M468-240q-96-5-162-74t-66-166q0-100 70-170t170-70q97 0 166 66t74 163l-63-20q-11-64-60-106.5T480-660q-75 0-127.5 52.5T300-480q0 67 42.5 116.5T449-303l19 63ZM821-60 650-231 600-80 480-480l400 120-151 50 171 171-79 79Z"/></svg>
@@ -207,7 +228,7 @@ path.combo {
 </g>
 <g transform="translate(938, 28)" class="key keypos-13">
 <rect rx="6" ry="6" x="-36" y="-22" width="72" height="44" class="key"/>
-<text x="0" y="0" class="key tap">BSPC</text>
+<use href="#material:backspace" xlink:href="#material:backspace" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:backspace"/>
 </g>
 <g transform="translate(42, 84)" class="key keypos-14">
 <rect rx="6" ry="6" x="-36" y="-22" width="72" height="44" class="key"/>
@@ -271,7 +292,7 @@ path.combo {
 </g>
 <g transform="translate(49, 140)" class="key keypos-29">
 <rect rx="6" ry="6" x="-43" y="-22" width="86" height="44" class="key"/>
-<text x="0" y="0" class="key tap">CLCK</text>
+<use href="#material:keyboard_capslock" xlink:href="#material:keyboard_capslock" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_capslock"/>
 </g>
 <g transform="translate(126, 140)" class="key keypos-30">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
@@ -323,7 +344,7 @@ path.combo {
 </g>
 <g transform="translate(931, 140)" class="key keypos-42">
 <rect rx="6" ry="6" x="-43" y="-22" width="86" height="44" class="key"/>
-<text x="0" y="0" class="key tap">RET</text>
+<use href="#material:keyboard_return" xlink:href="#material:keyboard_return" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_return"/>
 </g>
 <g transform="translate(63, 196)" class="key keypos-43">
 <rect rx="6" ry="6" x="-57" y="-22" width="114" height="44" class="key"/>
@@ -376,7 +397,7 @@ path.combo {
 </g>
 <g transform="translate(882, 196)" class="key keypos-55">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">UP</text>
+<use href="#material:keyboard_arrow_up" xlink:href="#material:keyboard_arrow_up" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_arrow_up"/>
 </g>
 <g transform="translate(945, 196)" class="key keypos-56">
 <rect rx="6" ry="6" x="-29" y="-22" width="58" height="44" class="key"/>
@@ -410,11 +431,11 @@ path.combo {
 </g>
 <g transform="translate(556, 312) rotate(45.0)" class="key keypos-63">
 <rect rx="6" ry="6" x="-36" y="-22" width="72" height="44" class="key"/>
-<text x="0" y="0" class="key tap">RET</text>
+<use href="#material:keyboard_return" xlink:href="#material:keyboard_return" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_return"/>
 </g>
 <g transform="translate(616, 280) rotate(-15.0)" class="key keypos-64">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">BSPC</text>
+<use href="#material:backspace" xlink:href="#material:backspace" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:backspace"/>
 </g>
 <g transform="translate(700, 252)" class="key keypos-65">
 <rect rx="6" ry="6" x="-36" y="-22" width="72" height="44" class="key"/>
@@ -426,15 +447,15 @@ path.combo {
 </g>
 <g transform="translate(826, 252)" class="key keypos-67">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">LEFT</text>
+<use href="#material:keyboard_arrow_left" xlink:href="#material:keyboard_arrow_left" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_arrow_left"/>
 </g>
 <g transform="translate(882, 252)" class="key keypos-68">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">DOWN</text>
+<use href="#material:keyboard_arrow_down" xlink:href="#material:keyboard_arrow_down" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_arrow_down"/>
 </g>
 <g transform="translate(938, 252)" class="key keypos-69">
 <rect rx="6" ry="6" x="-22" y="-22" width="44" height="44" class="key"/>
-<text x="0" y="0" class="key tap">RIGHT</text>
+<use href="#material:keyboard_arrow_right" xlink:href="#material:keyboard_arrow_right" x="-7" y="-7" height="14" width="14.0" class="key tap glyph material:keyboard_arrow_right"/>
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="467" y="294" width="28" height="26" class="combo"/>
