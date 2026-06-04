@@ -4,10 +4,3 @@ draw_config:
   inner_pad_w: 6
   inner_pad_h: 6
   n_columns: 1
-
-parse_config:
-  zmk_preamble: ""
-
-layout:
-  qmk_info_json: keymap_drawer_layout.json
-  qmk_layout: LAYOUT
