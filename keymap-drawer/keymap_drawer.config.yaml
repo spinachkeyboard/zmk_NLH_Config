@@ -28,6 +28,7 @@ parse_config:
     "&msc SCRL_DOWN":    {t: "Scroll\nDown"}
     "&msc SCRL_LEFT":    {t: "Scroll\nLeft"}
     "&msc SCRL_RIGHT":   {t: "Scroll\nRight"}
+    "&bt BT_SEL 0":      {t: "$$material:bluetooth$$",     h: "0"}
     "&bt BT_SEL 1":      {t: "$$material:bluetooth$$",     h: "1"}
     "&bt BT_SEL 2":      {t: "$$material:bluetooth$$",     h: "2"}
     "&bt BT_SEL 3":      {t: "$$material:bluetooth$$",     h: "3"}

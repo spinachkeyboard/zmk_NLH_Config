@@ -39,10 +39,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        /* hold-tap: hold=/, tap=?/! */
+        /* hold-tap: hold=/, tap=?/! (second cell unused, tap has 0 binding-cells) */
         qexcl_ht: qexcl_ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&qexcl>;
@@ -111,7 +111,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────┤
     &kp CLCK   &hml LCTRL A &hml LSHFT S &hml LALT D &hml LGUI F &kp G  &kp H       &kp H      &hmr RGUI J &hmr RALT K &hmr RSHFT L &hmr RCTRL SEMI &kp SQT  &kp RET
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤             ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                    &kp B      &kp N      &kp M      &kp COMMA  &kp DOT    &qexcl_ht FSLH &kp UP  &kp RSHFT
+    &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                    &kp B      &kp N      &kp M      &kp COMMA  &kp DOT    &qexcl_ht FSLH 0 &kp UP  &kp RSHFT
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤             ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
     &sl 1      &kp LCTRL  &kp LALT   &kp LGUI   &kp LANG1  &kp SPACE                &kp RET    &kp BSPC   &kp RGUI   &kp LANG2  &kp LEFT   &kp DOWN   &kp RIGHT
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯             ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
