@@ -6,7 +6,7 @@ on:
     paths:
       - 'config/*.keymap'
       - '.github/workflows/keymap-drawer.yaml'
-      - 'keymap_drawer.config.yaml'
+      - 'keymap-drawer/keymap_drawer.config.yaml'
       - 'boards/shields/nlh_split/nlh_split-layouts.dtsi'
 
 permissions:
@@ -20,6 +20,6 @@ jobs:
     with:
       keymap_patterns: 'config/*.keymap'
       output_folder: keymap-drawer
-      config_path: keymap_drawer.config.yaml
+      config_path: keymap-drawer/keymap_drawer.config.yaml
       west_config_path: 'config'
       amend_commit: false

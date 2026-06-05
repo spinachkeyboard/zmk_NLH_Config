@@ -1,0 +1,37 @@
+draw_config:
+  key_w: 60
+  key_h: 56
+  inner_pad_w: 6
+  inner_pad_h: 6
+  n_columns: 1
+
+parse_config:
+  raw_binding_map:
+    "&to 0":             {t: "△"}
+    "&mmv MOVE_UP":      {t: "$$material:arrow_upward$$",   h: "$$material:mouse$$"}
+    "&mmv MOVE_DOWN":    {t: "$$material:arrow_downward$$", h: "$$material:mouse$$"}
+    "&mmv MOVE_RIGHT":   {t: "$$material:arrow_forward$$",  h: "$$material:mouse$$"}
+    "&mmv MOVE_LEFT":    {t: "$$material:arrow_back$$",     h: "$$material:mouse$$"}
+    "&mkp LCLK":         {t: "$$material:left_click$$"}
+    "&mkp RCLK":         {t: "$$material:right_click$$"}
+    "&mkp MCLK":         {t: "$$material:drag_pan$$"}
+    "&kp BSPC":          {t: "$$material:backspace$$"}
+    "&kp RET":           {t: "$$material:keyboard_return$$"}
+    "&kp CLCK":          {t: "$$material:keyboard_capslock$$"}
+    "&kp UP":            {t: "$$material:keyboard_arrow_up$$"}
+    "&kp DOWN":          {t: "$$material:keyboard_arrow_down$$"}
+    "&kp LEFT":          {t: "$$material:keyboard_arrow_left$$"}
+    "&kp RIGHT":         {t: "$$material:keyboard_arrow_right$$"}
+    "&kp LGUI":          {t: "$$material:keyboard_command_key$$"}
+    "&kp RGUI":          {t: "$$material:keyboard_command_key$$"}
+    "&msc SCRL_UP":      {t: "Scroll\nUp"}
+    "&msc SCRL_DOWN":    {t: "Scroll\nDown"}
+    "&msc SCRL_LEFT":    {t: "Scroll\nLeft"}
+    "&msc SCRL_RIGHT":   {t: "Scroll\nRight"}
+    "&bt BT_SEL 1":      {t: "$$material:bluetooth$$",     h: "1"}
+    "&bt BT_SEL 2":      {t: "$$material:bluetooth$$",     h: "2"}
+    "&bt BT_SEL 3":      {t: "$$material:bluetooth$$",     h: "3"}
+    "&bt BT_SEL 4":      {t: "$$material:bluetooth$$",     h: "4"}
+    "&bt BT_CLR":        {t: "$$material:bluetooth$$",     h: "CLEAR"}
+    "&bt BT_CLR_ALL":    {t: "$$material:bluetooth$$",     h: "CLEAR\nALL"}
+

@@ -1,3 +1,10 @@
+/*
+ * NLH Split — Left half hardware definitions
+ *
+ * kscan: col2row diode direction, 7 cols x 5 rows
+ * Left half is BLE central (host)
+ */
+
 #include "nlh_split-layouts.dtsi"
 
 / {
@@ -11,25 +18,26 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&gpio1 4  GPIO_ACTIVE_HIGH>
-            , <&gpio0 11 GPIO_ACTIVE_HIGH>
-            , <&gpio1 0  GPIO_ACTIVE_HIGH>
-            , <&gpio0 24 GPIO_ACTIVE_HIGH>
-            , <&gpio0 22 GPIO_ACTIVE_HIGH>
-            , <&gpio0 20 GPIO_ACTIVE_HIGH>
-            , <&gpio0 17 GPIO_ACTIVE_HIGH>
+            = <&gpio1 4  GPIO_ACTIVE_HIGH>   /* COL0 */
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>   /* COL1 */
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>   /* COL2 */
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>   /* COL3 */
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>   /* COL4 */
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>   /* COL5 */
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>   /* COL6 */
             ;
 
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW0 */
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW1 */
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW2 */
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW3 */
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW4 */
             ;
     };
 };
 
+/* kscan is left-only; attach to physical layout here */
 &physical_layout0 {
     kscan = <&kscan0>;
 };

@@ -1,6 +1,13 @@
 # NLH Split
 
-70-key wireless split keyboard firmware (ZMK, nice!nano v2)
+A 70-key wireless split keyboard inspired by [Hatsukey](https://scrapbox.io/Hatsukey/).
+
+## Features
+
+- **70 keys** — row-staggered layout
+- **MX / Choc V1 hot-swap** support (MX spacing)
+- **Wireless Bluetooth** via [nice!nano v2](https://nicekeyboards.com/nice-nano/)
+- Firmware: [ZMK](https://zmk.dev/)
 
 ## Keymap
 

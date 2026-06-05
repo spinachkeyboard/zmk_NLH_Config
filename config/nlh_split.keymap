@@ -4,30 +4,92 @@
 #include <dt-bindings/zmk/pointing.h>
 
 /*
- * NLH Split — 70 keys
+ * NLH Split — 70-key wireless split keyboard (ZMK, nice!nano v2)
  *
- * ROW0 (14): ` 1 2 3 4 5 6 | 7 8 9 0 - = BSPC
- * ROW1 (15): TAB Q W E R T Y | Y U I O P [ ] \
- * ROW2 (14): CAPS A S D F G H | H J K L ; ' RET
- * ROW3 (14): LSFT Z X C V B | B N M , . ?/! UP RSFT
- * ROW4 (13): MO1 LCTL LALT LGUI ESC SPC | RET BSP RGUI FSLH ← ↓ →
+ * Layer 0 Base  : Standard QWERTY with home row mods (CTRL/SHIFT/ALT/GUI)
+ * Layer 1 Fn    : F1–F12, ZMK Studio unlock
+ * Layer 2 BLE   : Bluetooth profile select / clear
+ * Layer 3 Mouse : Mouse cursor / click / scroll
  *
- * Mouse layer (3): WASD/HJKL=move, F/;=LCLK, G=RCLK, C=MCLK
- *   GRAVE=toggle off | SPC+RET combo → toggle on/off
+ * Key layout by row:
+ * ROW0 (14): `  1  2  3  4  5  6  |  7  8  9  0  -  =  BSPC
+ * ROW1 (15): TAB  Q  W  E  R  T  Y  |  Y  U  I  O  P  [  ]  \
+ * ROW2 (14): CAPS  A  S  D  F  G  H  |  H  J  K  L  ;  '  RET
+ * ROW3 (14): LSFT  Z  X  C  V  B  |  B  N  M  ,  .  ?/!//  UP  RSFT
+ * ROW4 (13): Fn  LCTL  LALT  LGUI  LANG1  SPC  |  RET  BSPC  RGUI  LANG2  ←  ↓  →
+ *
+ * Combo: SPC + RET → toggle mouse layer
  */
 
 / {
     behaviors {
+
+        /* Mouse cursor: quadratic acceleration, 16ms interval */
+        mmv: mmv {
+            trigger-period-ms = <16>;
+            time-to-max-speed-ms = <500>;
+            acceleration-exponent = <2>;
+        };
+
+        /* mod-morph: tap=?, shift+tap=! */
         qexcl: qexcl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        /* hold-tap: hold=/, tap=?/! */
+        qexcl_ht: qexcl_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&qexcl>;
+        };
+
+        /* Home row mod (left): hold activates only when a right-side key is pressed */
+        hml: homerow_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+                 7  8  9 10 11 12 13
+                21 22 23 24 25 26 27 28
+                36 37 38 39 40 41 42
+                49 50 51 52 53 54 55 56
+                63 64 65 66 67 68 69
+            >;
+            hold-trigger-on-release;
+        };
+
+        /* Home row mod (right): hold activates only when a left-side key is pressed */
+        hmr: homerow_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+                 0  1  2  3  4  5  6
+                14 15 16 17 18 19 20
+                29 30 31 32 33 34 35
+                43 44 45 46 47 48
+                57 58 59 60 61 62
+            >;
+            hold-trigger-on-release;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
+        /* SPC(62) + RET(63) simultaneously → toggle mouse layer */
         combo_mouse {
             timeout-ms = <50>;
             key-positions = <62 63>;
@@ -38,47 +100,75 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* ===== Layer 0: Base ===== */
         default_layer {
             display-name = "Base";
             bindings = <
-&kp GRAVE  &kp N1    &kp N2   &kp N3   &kp N4   &kp N5   &kp N6      &kp N7    &kp N8   &kp N9    &kp N0   &kp MINUS &kp EQUAL &kp BSPC
-&kp TAB    &kp Q     &kp W    &kp E    &kp R    &kp T    &kp Y       &kp Y     &kp U    &kp I     &kp O    &kp P     &kp LBKT  &kp RBKT  &kp BSLH
-&kp CLCK   &kp A     &kp S    &kp D    &kp F    &kp G    &kp H       &kp H     &kp J    &kp K     &kp L    &kp SEMI  &kp SQT   &kp RET
-&kp LSHFT  &kp Z     &kp X    &kp C    &kp V    &kp B               &kp B     &kp N    &kp M     &kp COMMA &kp DOT  &qexcl    &kp UP    &kp RSHFT
-&sl 1      &kp LCTRL &kp LALT &kp LGUI &kp ESC  &kp SPACE           &kp RET   &kp BSPC &kp RGUI  &kp FSLH  &kp LEFT &kp DOWN  &kp RIGHT
+// ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬───────────────╮
+    &kp GRAVE  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6         &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS  &kp EQUAL  &kp BSPC
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┬────┤
+    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp LBKT   &kp RBKT   &kp BSLH
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────┤
+    &kp CLCK   &hml LCTRL A &hml LSHFT S &hml LALT D &hml LGUI F &kp G  &kp H       &kp H      &hmr RGUI J &hmr RALT K &hmr RSHFT L &hmr RCTRL SEMI &kp SQT  &kp RET
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤             ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                    &kp B      &kp N      &kp M      &kp COMMA  &kp DOT    &qexcl_ht FSLH &kp UP  &kp RSHFT
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤             ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &sl 1      &kp LCTRL  &kp LALT   &kp LGUI   &kp LANG1  &kp SPACE                &kp RET    &kp BSPC   &kp RGUI   &kp LANG2  &kp LEFT   &kp DOWN   &kp RIGHT
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯             ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
             >;
         };
 
+        /* ===== Layer 1: Fn ===== */
         lower_layer {
             display-name = "Fn";
             bindings = <
-&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &studio_unlock
-&trans   &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans   &trans   &trans   &trans   &trans
-&trans   &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans   &trans   &trans   &trans
-&sl 2    &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans   &trans   &trans   &trans   &trans
-&trans   &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans   &trans   &trans   &trans
+// ╭─────────┬────────┬────────┬────────┬────────┬────────┬────────╮   ╭────────┬────────┬────────┬─────────┬─────────┬─────────┬────────────────╮
+    &kp ESC   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F6       &kp F7   &kp F8   &kp F9   &kp F10   &kp F11   &kp F12   &studio_unlock
+// ├─────────┼────────┼────────┼────────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼─────────┼─────────┼─────────┼─────────┬──────┤
+    &trans    &trans   &trans   &trans   &trans   &trans   &trans        &trans   &trans   &trans   &trans    &trans    &trans    &trans    &trans
+// ├─────────┼────────┼────────┼────────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼─────────┼─────────┼─────────┴─────────┤
+    &trans    &trans   &trans   &trans   &trans   &trans   &trans        &trans   &trans   &trans   &trans    &trans    &trans    &trans
+// ├─────────┼────────┼────────┼────────┼────────┼────────┤             ├────────┼────────┼────────┼─────────┼─────────┼─────────┼─────────┤
+    &sl 2     &trans   &trans   &trans   &trans   &trans                 &trans   &trans   &trans   &trans    &trans    &trans    &trans    &trans
+// ├─────────┼────────┼────────┼────────┼────────┼────────┤             ├────────┼────────┼────────┼─────────┼─────────┼─────────┼─────────┤
+    &trans    &trans   &trans   &trans   &trans   &trans                 &trans   &trans   &trans   &trans    &trans    &trans    &trans
+// ╰─────────┴────────┴────────┴────────┴────────┴────────╯             ╰────────┴────────┴────────┴─────────┴─────────┴─────────┴─────────╯
             >;
         };
 
+        /* ===== Layer 2: BLE ===== */
         raise_layer {
             display-name = "BLE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &bt BT_CLR_ALL
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans  &trans
+// ╭────────┬────────┬────────┬────────┬────────┬────────┬────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬───────────┬───────────────╮
+    &trans   &trans   &trans   &trans   &trans   &trans   &trans        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_CLR  &bt BT_CLR_ALL
+// ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼───────────┼───────────┬───┤
+    &trans   &trans   &trans   &trans   &trans   &trans   &trans        &trans         &trans         &trans         &trans         &trans         &trans      &trans      &trans
+// ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼───────────┴───────────┤
+    &trans   &trans   &trans   &trans   &trans   &trans   &trans        &trans         &trans         &trans         &trans         &trans         &trans      &trans
+// ├────────┼────────┼────────┼────────┼────────┼────────┤             ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼───────────┼───────────┤
+    &trans   &trans   &trans   &trans   &trans   &trans                 &trans         &trans         &trans         &trans         &trans         &trans      &trans      &trans
+// ├────────┼────────┼────────┼────────┼────────┼────────┤             ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼───────────┼───────────┤
+    &trans   &trans   &trans   &trans   &trans   &trans                 &trans         &trans         &trans         &trans         &trans         &trans      &trans
+// ╰────────┴────────┴────────┴────────┴────────┴────────╯             ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────┴───────────┴───────────╯
             >;
         };
 
+        /* ===== Layer 3: Mouse ===== */
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&to 0          &to 0           &mkp MCLK       &to 0           &to 0           &to 0           &to 0              &to 0           &mkp MCLK       &to 0           &to 0           &to 0           &to 0           &to 0
-&to 0          &mkp LCLK       &mmv MOVE_UP    &mkp RCLK       &to 0           &to 0           &to 0              &mkp LCLK       &mmv MOVE_UP    &mkp RCLK       &to 0           &to 0           &to 0           &to 0           &to 0
-&to 0          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &to 0           &to 0           &to 0              &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &to 0           &to 0           &to 0           &to 0
-&to 0          &to 0           &to 0           &to 0           &to 0           &to 0                              &to 0           &to 0           &to 0           &to 0           &to 0           &to 0           &msc SCRL_UP    &to 0
-&to 0          &to 0           &to 0           &to 0           &to 0           &to 0                              &to 0           &to 0           &to 0           &to 0           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
+// ╭────────┬──────────────┬──────────────┬──────────────┬────────┬────────┬────────╮   ╭────────┬──────────────┬──────────────┬────────┬────────┬────────┬────────╮
+    &to 0    &to 0          &mkp MCLK      &to 0          &to 0    &to 0    &to 0         &to 0    &mkp MCLK      &to 0          &to 0    &to 0    &to 0    &to 0
+// ├────────┼──────────────┼──────────────┼──────────────┼────────┼────────┼────────┤   ├────────┼──────────────┼──────────────┼────────┼────────┼────────┼────────┬──────┤
+    &to 0    &mkp LCLK      &mmv MOVE_UP   &mkp RCLK      &to 0    &to 0    &to 0         &mkp LCLK &mmv MOVE_UP  &mkp RCLK      &to 0    &to 0    &to 0    &to 0    &to 0
+// ├────────┼──────────────┼──────────────┼──────────────┼────────┼────────┼────────┤   ├────────┼──────────────┼──────────────┼────────┼────────┼────────┴────────┤
+    &to 0    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &to 0   &to 0    &to 0         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &to 0 &to 0  &to 0    &to 0
+// ├────────┼──────────────┼──────────────┼──────────────┼────────┼────────┤             ├────────┼──────────────┼──────────────┼────────┼────────┼────────┼──────────────┤
+    &to 0    &to 0          &to 0          &to 0          &to 0    &to 0                  &to 0    &to 0          &to 0          &to 0    &to 0    &to 0    &msc SCRL_UP   &to 0
+// ├────────┼──────────────┼──────────────┼──────────────┼────────┼────────┤             ├────────┼──────────────┼──────────────┼────────┼────────────────┼──────────────┼────────────────┤
+    &to 0    &to 0          &to 0          &to 0          &to 0    &to 0                  &to 0    &to 0          &to 0          &to 0    &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_RIGHT
+// ╰────────┴──────────────┴──────────────┴──────────────┴────────┴────────╯             ╰────────┴──────────────┴──────────────┴────────┴────────────────┴──────────────┴────────────────╯
             >;
         };
 

@@ -1,3 +1,11 @@
+/*
+ * NLH Split — Right half hardware definitions
+ *
+ * kscan: col2row diode direction, 8 cols x 5 rows
+ * col-offset = 7 connects to left-side matrix
+ * Right half is BLE peripheral (slave)
+ */
+
 #include "nlh_split-layouts.dtsi"
 
 / {
@@ -11,26 +19,27 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&gpio0 31 GPIO_ACTIVE_HIGH>  /* R_COL0 = P0.31 */
-            , <&gpio0 29 GPIO_ACTIVE_HIGH>  /* R_COL1 = P0.29 */
-            , <&gpio0 2  GPIO_ACTIVE_HIGH>  /* R_COL2 = P0.02 */
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>  /* R_COL3 = P1.15 */
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>  /* R_COL4 = P1.13 */
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>  /* R_COL5 = P1.11 */
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>  /* R_COL6 = P0.10 */
-            , <&gpio0 9  GPIO_ACTIVE_HIGH>  /* R_COL7 = P0.09 */
+            = <&gpio0 31 GPIO_ACTIVE_HIGH>   /* COL0 */
+            , <&gpio0 29 GPIO_ACTIVE_HIGH>   /* COL1 */
+            , <&gpio0 2  GPIO_ACTIVE_HIGH>   /* COL2 */
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>   /* COL3 */
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>   /* COL4 */
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>   /* COL5 */
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>   /* COL6 */
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>   /* COL7 */
             ;
 
         row-gpios
-            = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW0 = P1.00 */
-            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW1 = P0.24 */
-            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW2 = P0.22 */
-            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW3 = P0.20 */
-            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* R_ROW4 = P0.17 */
+            = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW0 */
+            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW1 */
+            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW2 */
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW3 */
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* ROW4 */
             ;
     };
 };
 
+/* Right columns start at col 7 in the full matrix */
 &default_transform {
     col-offset = <7>;
 };
