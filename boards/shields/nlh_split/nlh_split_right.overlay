@@ -43,3 +43,8 @@
 &default_transform {
     col-offset = <7>;
 };
+
+/* Allow key press to wake the peripheral from deep sleep */
+&kscan0 {
+    wakeup-source;
+};
