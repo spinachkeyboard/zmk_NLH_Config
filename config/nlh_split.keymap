@@ -21,15 +21,15 @@
  * Combo: SPC + RET → toggle mouse layer
  */
 
+/* Mouse cursor: quadratic acceleration, 16ms interval */
+&mmv {
+    trigger-period-ms = <16>;
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;
+};
+
 / {
     behaviors {
-
-        /* Mouse cursor: quadratic acceleration, 16ms interval */
-        mmv: mmv {
-            trigger-period-ms = <16>;
-            time-to-max-speed-ms = <500>;
-            acceleration-exponent = <2>;
-        };
 
         /* mod-morph: tap=?, shift+tap=! */
         qexcl: qexcl {
