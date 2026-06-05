@@ -55,7 +55,7 @@ layers:
   - M
   - ','
   - .
-  - '&qexcl_ht FSLH'
+  - {t: '?', h: /, s: '!'}
   - $$material:keyboard_arrow_up$$
   - RSHFT
   - {t: Fn, h: sticky}
@@ -150,7 +150,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
+  - {t: '$$material:bluetooth$$', h: '0'}
   - {t: '$$material:bluetooth$$', h: '1'}
   - {t: '$$material:bluetooth$$', h: '2'}
   - {t: '$$material:bluetooth$$', h: '3'}
