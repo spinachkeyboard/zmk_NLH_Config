@@ -31,17 +31,17 @@ layers:
   - ']'
   - \
   - $$material:keyboard_capslock$$
-  - {t: A, h: LCTRL}
-  - {t: S, h: LSHFT}
-  - {t: D, h: LALT}
-  - {t: F, h: '$$material:keyboard_command_key$$'}
+  - A
+  - S
+  - D
+  - F
   - G
   - H
   - H
-  - {t: J, h: '$$material:keyboard_command_key$$'}
-  - {t: K, h: RALT}
-  - {t: L, h: RSHFT}
-  - {t: ;, h: RCTRL}
+  - J
+  - K
+  - L
+  - ;
   - ''''
   - $$material:keyboard_return$$
   - LSHFT
