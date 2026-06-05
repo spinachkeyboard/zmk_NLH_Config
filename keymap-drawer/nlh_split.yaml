@@ -31,17 +31,17 @@ layers:
   - ']'
   - \
   - $$material:keyboard_capslock$$
-  - A
-  - S
-  - D
-  - F
+  - {t: A, h: LCTRL}
+  - {t: S, h: LSHFT}
+  - {t: D, h: LALT}
+  - {t: F, h: '$$material:keyboard_command_key$$'}
   - G
   - H
   - H
-  - J
-  - K
-  - L
-  - ;
+  - {t: J, h: '$$material:keyboard_command_key$$'}
+  - {t: K, h: RALT}
+  - {t: L, h: RSHFT}
+  - {t: ;, h: RCTRL}
   - ''''
   - $$material:keyboard_return$$
   - LSHFT
@@ -55,19 +55,19 @@ layers:
   - M
   - ','
   - .
-  - {t: '?', s: '!'}
+  - '&qexcl_ht FSLH'
   - $$material:keyboard_arrow_up$$
   - RSHFT
   - {t: Fn, h: sticky}
   - LCTRL
   - LALT
-  - LGUI
-  - ESC
+  - $$material:keyboard_command_key$$
+  - LANG1
   - SPACE
   - $$material:keyboard_return$$
   - $$material:backspace$$
-  - RGUI
-  - /
+  - $$material:keyboard_command_key$$
+  - LANG2
   - $$material:keyboard_arrow_left$$
   - $$material:keyboard_arrow_down$$
   - $$material:keyboard_arrow_right$$
@@ -151,12 +151,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - BT CLR
-  - BT CLR ALL
+  - {t: '$$material:bluetooth$$', h: '1'}
+  - {t: '$$material:bluetooth$$', h: '2'}
+  - {t: '$$material:bluetooth$$', h: '3'}
+  - {t: '$$material:bluetooth$$', h: '4'}
+  - {t: '$$material:bluetooth$$', h: CLEAR}
+  - {t: '$$material:bluetooth$$', h: 'CLEAR
+
+      ALL'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -269,7 +271,9 @@ layers:
   - △
   - △
   - △
-  - '&msc SCRL_UP'
+  - 'Scroll
+
+    Up'
   - △
   - △
   - △
@@ -281,9 +285,15 @@ layers:
   - △
   - △
   - △
-  - '&msc SCRL_LEFT'
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_RIGHT'
+  - 'Scroll
+
+    Left'
+  - 'Scroll
+
+    Down'
+  - 'Scroll
+
+    Right'
 combos:
 - p: [62, 63]
   k: {t: Mouse, h: toggle}
